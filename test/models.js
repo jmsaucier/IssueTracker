@@ -1,3 +1,5 @@
+/*jshint expr: true*/
+
 const mongoose = require('mongoose');
 const {expect} = require('chai');
 const sinon = require('sinon');
@@ -81,7 +83,7 @@ describe('User Model', () => {
       userMock.restore();
       expect(result.email).to.equal('test@gmail.com');
       done();
-    })
+    });
   });
 
   it('should remove user by email', (done) => {
@@ -101,6 +103,6 @@ describe('User Model', () => {
       expect(err).to.be.null;
       expect(result.nRemoved).to.equal(1);
       done();
-    })
+    });
   });
 });
